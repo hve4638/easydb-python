@@ -48,7 +48,7 @@ class EasyDB:
         cur = self.conn.cursor()
         query = f"SELECT name FROM sqlite_master WHERE type='table' AND name='{table_name}'"
         cur.execute(query)
-        result = self.cur.fetchone()
+        result = cur.fetchone()
         return result is not None
     
     def select_count(self, table:str)->QueryBuilder:
